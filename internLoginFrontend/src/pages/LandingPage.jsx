@@ -1,36 +1,48 @@
 import React from 'react'
-import {  useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const LandingPage = () => {
-    const navigate=useNavigate();
-    const handleLoginPage=()=>{
-    navigate("/login")
+    const navigate = useNavigate();
+    
+    const handleLoginPage = () => {
+        navigate("/login")
     }
-    const handleSigninPage=()=>{
-    navigate("/signin")
+    
+    const handleSigninPage = () => {
+        navigate("/signup")
     }
-  return (
-    <div className="flex flex-col justify-between min-h-screen bg-white px-4 py-8">
-    <div className="mt-auto mb-8">
-      <h1 className="text-4xl  text-gray-900 mb-2 font-medium">Welcome to PopX</h1>
-      <p className="text-xl text-gray-500 mb-8">
-        Lorem ipsum dolor sit amet,<br />
-        consectetur adipiscing elit,
-      </p>
+    
+    return (
+      <div className="flex flex-col min-h-screen bg-white px-6 py-12">
       
-      
-      <div className="space-y-3">
-        <button className="w-full py-4 bg-[#6c25ff] text-white rounded-lg text-xl font-medium cursor-pointer" onClick={handleSigninPage}>
-          Create Account
-        </button>
-        
-        <button className="w-full py-4 bg-purple-200 text-purple-900 rounded-lg text-xl font-medium cursor-pointer" onClick={handleLoginPage}>
-          Already Registered? Login
-        </button>
-      </div>
-    </div>
-  </div>
-  )
+            <div className="flex-grow flex flex-col justify-end pb-10">
+            <h1 className="text-3xl font-semibold text-gray-900 ">Welcome to PopX</h1>
+                <p className="text-base text-gray-700">
+                    Lorem ipsum dolor sit amet,
+                </p>
+                <p className="text-base text-gray-700">
+                    consectetur adipiscing elit,
+                </p>
+            </div>
+            
+       
+            <div className="mt-auto space-y-2">
+                <button 
+                    className="w-full py-3 bg-[#6C25FF] text-white rounded-md text-base font-medium"
+                    onClick={handleSigninPage}
+                >
+                    Create Account
+                </button>
+                
+                <button 
+                    className="w-full py-3 bg-[#CEBAFB] text-[#1D1D1D] rounded-md text-base font-medium"
+                    onClick={handleLoginPage}
+                >
+                    Already Registered? Login
+                </button>
+            </div>
+        </div>
+    )
 }
 
 export default LandingPage
